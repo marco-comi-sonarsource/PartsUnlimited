@@ -15,14 +15,14 @@ stages:
   jobs:
   - job:
     steps:
-    - bash: echo Hello, world!
+    - bash: echo "Hello, world!"
       displayName: 'Run a one-line script'
       
 - stage: B
   jobs:
   - job:
     steps:
-    - bash: echo Ravi
+    - bash: echo "Ravi"
       displayName: 'Run a second line'
 
 
