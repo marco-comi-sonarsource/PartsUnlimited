@@ -11,19 +11,26 @@ pool:
 
 
 stages:
-- stage: A
+- stage: Terraform Init
   jobs:
   - job:
     steps:
-    - bash: echo "Hello, world!"
-      displayName: 'Run a one-line script'
+    - bash: terraform init
+      displayName: 'Running Terraform init'
       
-- stage: B
+- stage: Terraform plan
   jobs:
   - job:
     steps:
-    - bash: echo "Ravi"
-      displayName: 'Run a second line'
+    - bash: terraform plan
+      displayName: 'Running Terraform plan'
+
+- stage: Terraform Apply
+  jobs:
+  - job:
+    steps:
+    - bash: terraform apply -auto-approve
+      displayName: 'Running terraform apply'
 
 
 
